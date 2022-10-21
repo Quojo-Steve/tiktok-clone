@@ -15,7 +15,7 @@ def index(req):
             return redirect('home')
         else:
             messages.info(req, 'invalid credentials')
-            return redirect('home')
+            return redirect('/')
     
     
     return render(req, 'login.html')
