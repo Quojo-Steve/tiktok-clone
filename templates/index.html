@@ -1,0 +1,206 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>TikTok</title>
+    <script src={% static "./script.js" %} defer></script>
+    <link rel="stylesheet" href={% static "style.css" %}>
+  </head>
+  <body>
+    <header>
+      <nav class="navbar">
+        <img class="logo" src={% static "assets/logo.png" %} alt="Tiktok" />
+        <div class="search-bar big">
+          <input
+            type="text"
+            class="search-input"
+            placeholder="Search videos"
+          />
+          <button class="search-btn main">
+            <img src={% static "./images/Search_64px.png" %}>
+          </button>
+        </div>
+
+        <div class="nav-right">
+          <a class="upload-btn" href="upload.html">Upload</a>
+          {% if not user.is_authenticated %}
+          <a class="login-btn" href="/">Log in</a>
+          {% else %}
+          <a class="login-btn" href="/">Logout</a>
+          {% endif %}
+
+          <button class="search-btn small">
+            <img src={% static "./images/Search_64px.png" %}>
+          </button>
+
+          <button class="search-btn small close">
+            <img src={% static "./images/close_26px.png" %}>
+          </button>
+        </div>
+      </nav>
+      <div class="small-search .active">
+        <div class="search-bar">
+          <input
+            type="text"
+            class="search-input"
+            placeholder="Search videos"
+          />
+          <button class="search-btn">
+            <img src={% static "./images/Search_64px.png" %}>
+          </button>
+        </div>
+      </div>
+    </header>
+
+    <main>
+        <div class="left">
+            <div class="btns">
+                <a href="#"><img src={% static "./images/Home Alarm_64px.png" %} alt=""> <span>For You</span></a>
+                <a href="#"><img src={% static "./images/following_30px.png" %} alt=""> <span>Following</span></a>
+              </div>
+            <div class="login">
+                <p>Log in to follow creators, like videos, and view comments</p>
+                <a href="/">Log in</a>
+            </div>
+            <div class="accounts">
+                <p>Suggested accounts</p>
+                <div class="user">
+                    <img src={% static "assets/Cat.png" %} alt="avatar">
+                    <h6 class="username">Cheshire_Cat</h6>
+                </div>
+                <div class="user">
+                    <img src={% static "assets/Frankenstein.png" %} alt="avatar">
+                    <h6 class="username">Frank</h6>
+                </div>
+                <div class="user">
+                    <img src={% static "assets/Pirate.png" %} alt="avatar">
+                    <h6 class="username">Pirate</h6>
+                </div>
+                <div class="user">
+                    <img src={% static "assets/Gypsy.png" %} alt="avatar">
+                    <h6 class="username">Gypsy</h6>
+                </div>
+            </div>
+            <div class="tags">
+                <p>Discover</p>
+                <div>
+                    <a href="#"># tiktokcookbook</a>
+                    <a href="#"># summeressentials</a>
+                    <a href="#"># music</a>
+                    <a href="#"># memories</a>
+                    <a href="#"># whoisbetter</a>
+                    <a href="#"># tiktokcookbook</a>
+                    <a href="#"># summeressentials</a>
+                    <a href="#"># music</a>
+                    <a href="#"># memories</a>
+                    <a href="#"># whoisbetter</a>
+                </div>
+            </div>
+            <div class="links">
+                <div>
+                    <div class="link">
+                        <a href="#">About</a>
+                        <a href="#">Newsroom</a>
+                        <a href="#">Contact</a>
+                        <a href="#">Careers</a>
+                        <a href="#">ByteDance</a>
+                        <a href="#">About</a>
+                        <a href="#">Newsroom</a>
+                        <a href="#">Contact</a>
+                        <a href="#">Careers</a>
+                        <a href="#">ByteDance</a>
+                    </div>
+                    <div class="copyright">
+                        <h6>&copy; 2022 TikTok</h6>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="right">
+            <div class="post">
+                <div class="post-info">
+                    <div class="user">
+                        <img src={% static "assets/Gypsy.png" %} alt="avatar">
+                        <div>
+                            <h6>Gypsy</h6>
+                            <p>Cool Video</p>
+                        </div>
+                    </div>
+                    <button>Follow</button>
+                </div>
+                <div class="post-content">
+                    <video autoplay muted controls loop disablepictureinpicture controlslist="nodownload noplaybackrate">
+                        <source src={% static "assets/vid1.mp4" %} type="video/mp4">
+                    </video>
+                    <div class="video-icons">
+                        <a href="#"><img src={% static "./images/heart_24px.png" %} alt=""><span>423</span></a>
+                        <a href="#"><img src={% static "./images/Comments_64px.png" %} alt=""><span>423</span></a>
+                        <a href="#"><img src={% static "./images/Download_64px.png" %} alt=""></a>
+                    </div>
+                    <div class="description">
+                      <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Earum, modi.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="post">
+              <div class="post-info">
+                  <div class="user">
+                      <img src={% static "assets/Gypsy.png" %} alt="avatar">
+                      <div>
+                          <h6>Gypsy</h6>
+                          <p>Cool Video</p>
+                      </div>
+                  </div>
+                  <button>Follow</button>
+              </div>
+              <div class="post-content">
+                  <video autoplay muted controls loop disablepictureinpicture controlslist="nodownload noplaybackrate">
+                      <source src={% static "assets/vid2.mp4" %} type="video/mp4">
+                  </video>
+                  <div class="video-icons">
+                      <a href="#"><img src={% static "./images/heart_24px.png" %} alt=""><span>423</span></a>
+                      <a href="#"><img src={% static "./images/Comments_64px.png" %} alt=""><span>423</span></a>
+                      <a href="#"><img src={% static "./images/Download_64px.png" %} alt=""></a>
+                  </div>
+                  <div class="description">
+                    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Earum, modi.</p>
+                  </div>
+              </div>
+          </div>
+
+          <div class="post">
+            <div class="post-info">
+                <div class="user">
+                    <img src={% static "assets/Gypsy.png" %} alt="avatar">
+                    <div>
+                        <h6>Gypsy</h6>
+                        <p>Cool Video</p>
+                    </div>
+                </div>
+                <button>Follow</button>
+            </div>
+            <div class="post-content">
+                <video autoplay muted controls loop disablepictureinpicture controlslist="nodownload noplaybackrate">
+                    <source src={% static "assets/vid3.mp4" %} type="video/mp4">
+                </video>
+                <div class="video-icons">
+                    <a href="#"><img src={% static "./images/heart_24px.png" %} alt=""><span>423</span></a>
+                    <a href="#"><img src={% static "./images/Comments_64px.png" %} alt=""><span>423</span></a>
+                    <a href="#"><img src={% static "./images/Download_64px.png" %} alt=""></a>
+                </div>
+                <div class="description">
+                  <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Earum, modi.</p>
+                </div>
+            </div>
+        </div>
+        </div>
+    </main>
+
+    <script src="script.js"></script>
+  </body>
+</html>
