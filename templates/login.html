@@ -14,12 +14,14 @@
             <header>
                 <img class="logo" src={% static "assets/logo.png" %} alt="Tiktok" />
             </header>
-            <form action="#" method="post">
+            <form method="post">
                 {% csrf_token %}
-                <div class="error-txt"></div>
+                {% for message in messages %}
+                <div class="error-txt">{{ message }}</div>
+                {% endfor %}
                 <div class="field input">
-                    <label>Email Address</label>
-                    <input type="email" placeholder="Enter your email address" name="email">
+                    <label>Tok Name</label>
+                    <input type="text" placeholder="Tok Name" name="tname" required spellcheck="true">
                 </div>
                 <div class="field input">
                     <label>Password</label>
