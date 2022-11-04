@@ -473,10 +473,12 @@ main {
     width: 20rem;
     margin-bottom: 1rem;
     position: relative;
+    height: 30rem;
 }
 
 .post-content > video {
     width: 90%;
+    height: 80%;
     border-radius: 10px;
     margin-left: 5rem;
 }

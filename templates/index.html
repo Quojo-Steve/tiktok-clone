@@ -121,83 +121,35 @@
         </div>
 
         <div class="right">
+          {% for post in posts %}
             <div class="post">
                 <div class="post-info">
                     <div class="user">
                         <img src={% static "assets/Gypsy.png" %} alt="avatar">
                         <div>
-                            <h6>Gypsy</h6>
-                            <p>Cool Video</p>
+                            <h6>{{post.user}}</h6>
+                            <!-- <p>Cool Video</p> -->
                         </div>
                     </div>
+                    {% if post.user != user %}
                     <button>Follow</button>
+                    {% endif %}
                 </div>
                 <div class="post-content">
-                    <video autoplay muted controls loop disablepictureinpicture controlslist="nodownload noplaybackrate">
-                        <source src={% static "assets/vid1.mp4" %} type="video/mp4">
+                    <video autoplay controls muted loop disablepictureinpicture controlslist="nodownload noplaybackrate">
+                        <source src={{post.video.url}} type="video/mp4">
                     </video>
                     <div class="video-icons">
-                        <a href="#"><img src={% static "./images/heart_24px.png" %} alt=""><span>423</span></a>
+                        <a href="likes?vid_id={{post.id}}"><img src={% static "./images/heart_24px.png" %} alt=""><span>{{post.no_of_likes}}</span></a>
                         <a href="#"><img src={% static "./images/Comments_64px.png" %} alt=""><span>423</span></a>
                         <a href="#"><img src={% static "./images/Download_64px.png" %} alt=""></a>
                     </div>
                     <div class="description">
-                      <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Earum, modi.</p>
+                      <p>{{post.description}}</p>
                     </div>
                 </div>
             </div>
-
-            <div class="post">
-              <div class="post-info">
-                  <div class="user">
-                      <img src={% static "assets/Gypsy.png" %} alt="avatar">
-                      <div>
-                          <h6>Gypsy</h6>
-                          <p>Cool Video</p>
-                      </div>
-                  </div>
-                  <button>Follow</button>
-              </div>
-              <div class="post-content">
-                  <video autoplay muted controls loop disablepictureinpicture controlslist="nodownload noplaybackrate">
-                      <source src={% static "assets/vid2.mp4" %} type="video/mp4">
-                  </video>
-                  <div class="video-icons">
-                      <a href="#"><img src={% static "./images/heart_24px.png" %} alt=""><span>423</span></a>
-                      <a href="#"><img src={% static "./images/Comments_64px.png" %} alt=""><span>423</span></a>
-                      <a href="#"><img src={% static "./images/Download_64px.png" %} alt=""></a>
-                  </div>
-                  <div class="description">
-                    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Earum, modi.</p>
-                  </div>
-              </div>
-          </div>
-
-          <div class="post">
-            <div class="post-info">
-                <div class="user">
-                    <img src={% static "assets/Gypsy.png" %} alt="avatar">
-                    <div>
-                        <h6>Gypsy</h6>
-                        <p>Cool Video</p>
-                    </div>
-                </div>
-                <button>Follow</button>
-            </div>
-            <div class="post-content">
-                <video autoplay muted controls loop disablepictureinpicture controlslist="nodownload noplaybackrate">
-                    <source src={% static "assets/vid3.mp4" %} type="video/mp4">
-                </video>
-                <div class="video-icons">
-                    <a href="#"><img src={% static "./images/heart_24px.png" %} alt=""><span>423</span></a>
-                    <a href="#"><img src={% static "./images/Comments_64px.png" %} alt=""><span>423</span></a>
-                    <a href="#"><img src={% static "./images/Download_64px.png" %} alt=""></a>
-                </div>
-                <div class="description">
-                  <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Earum, modi.</p>
-                </div>
-            </div>
-        </div>
+            {% endfor %}
         </div>
     </main>
 
